@@ -1,0 +1,29 @@
+{
+  "name": "Check phone & generate OTP",
+  "actions": [
+    {
+      "id": "generate_otp",
+      "type": "OTP",
+      "action": "GENERATE_CODE",
+      "allow_failure": false,
+      "mask_output": false,
+      "params": {
+        "reference": "{{fields.phone_number.international_number}}",
+        "length": 4
+      }
+    },
+    {
+      "id": "sendSmsWithTwilio_fruX",
+      "type": "TWILIO",
+      "action": "SEND_SMS",
+      "allow_failure": false,
+      "mask_output": false,
+      "params": {
+        "connection_id": "REPLACE_WITH_TWILIO_CONNECTION",
+        "from": "REPLACE_WITH_TWILIO_PHONE_NUMBER",
+        "to": "{{fields.phone_number.international_number}}",
+        "message": "{{actions.generate_otp.code}} is your verification code"
+      }
+    }
+  ]
+}

@@ -1,0 +1,125 @@
+{
+  "name": "Phone OTP verification with Twilio",
+  "languages": {
+    "primary": "en"
+  },
+  "nodes": [
+    {
+      "id": "step_4iwC",
+      "type": "STEP",
+      "coordinates": {
+        "x": 70,
+        "y": -73
+      },
+      "alias": "Phone details",
+      "config": {
+        "components": [
+          {
+            "id": "rich_text_hPsU",
+            "category": "BLOCK",
+            "type": "RICH_TEXT",
+            "config": {
+              "content": "<h2>Enter your phone</h2><p>A verification code will be sent to the phone number you provide.</p>"
+            }
+          },
+          {
+            "id": "phone_number",
+            "category": "FIELD",
+            "type": "TEL",
+            "label": "Phone number",
+            "required": true,
+            "sensitive": false,
+            "config": {
+              "country_picker": true
+            }
+          },
+          {
+            "id": "next_button_YKS2",
+            "category": "BLOCK",
+            "type": "NEXT_BUTTON",
+            "config": {
+              "text": "Continue"
+            }
+          }
+        ],
+        "next_node": "flow_3Qle"
+      }
+    },
+    {
+      "id": "step_qJEB",
+      "type": "STEP",
+      "coordinates": {
+        "x": 992,
+        "y": -86
+      },
+      "alias": "Phone details",
+      "config": {
+        "components": [
+          {
+            "id": "rich_text_Cqas",
+            "category": "BLOCK",
+            "type": "RICH_TEXT",
+            "config": {
+              "content": "<h2>Check your phone</h2><p>Please enter the 4-digit verification code that was sent to <strong>{{fields.phone_number.international_format}}</strong>. The code is valid for 10 minutes.</p>"
+            }
+          },
+          {
+            "id": "verification_code",
+            "category": "FIELD",
+            "type": "NUMBER",
+            "label": "Verification code",
+            "required": true,
+            "sensitive": false
+          },
+          {
+            "id": "next_button_BtEe",
+            "category": "BLOCK",
+            "type": "NEXT_BUTTON",
+            "config": {
+              "text": "Continue"
+            }
+          }
+        ],
+        "next_node": "flow_hq3b"
+      }
+    },
+    {
+      "id": "flow_hq3b",
+      "type": "FLOW",
+      "coordinates": {
+        "x": 1542,
+        "y": 46
+      },
+      "config": {
+        "flow_id": "Verify phone OTP & Update user",
+        "next_node": "$ending"
+      }
+    },
+    {
+      "id": "flow_3Qle",
+      "type": "FLOW",
+      "coordinates": {
+        "x": 625,
+        "y": 50
+      },
+      "config": {
+        "flow_id": "Check phone & generate OTP",
+        "next_node": "step_qJEB"
+      }
+    }
+  ],
+  "start": {
+    "next_node": "step_4iwC",
+    "coordinates": {
+      "x": -191,
+      "y": 32
+    }
+  },
+  "ending": {
+    "resume_flow": true,
+    "coordinates": {
+      "x": 1917,
+      "y": 21
+    }
+  }
+}

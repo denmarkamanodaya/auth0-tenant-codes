@@ -1,0 +1,1577 @@
+rules: []
+rulesConfigs: []
+pages: []
+resourceServers:
+  - name: dk-test
+    identifier: dk-test
+    allow_offline_access: false
+    scopes:
+      - value: read:organizations
+        description: read:organizations
+      - value: '*'
+        description: all
+      - value: create:users
+        description: create:users
+      - value: read:users
+        description: read:users
+      - value: read:connections
+        description: read:connections
+      - value: create:passwords_checkin
+        description: create:passwords_checkin
+      - value: create:organizations
+        description: create:organizations
+    signing_alg: RS256
+    skip_consent_for_verifiable_first_party_clients: true
+    token_dialect: access_token
+    token_lifetime: 86400
+    token_lifetime_for_web: 7200
+  - name: test api
+    identifier: https://quickstarts/api
+    allow_offline_access: false
+    enforce_policies: true
+    scopes:
+      - value: read:test
+        description: read test api
+    signing_alg: RS256
+    skip_consent_for_verifiable_first_party_clients: true
+    token_dialect: access_token_authz
+    token_lifetime: 86400
+    token_lifetime_for_web: 7200
+clients:
+  - name: API Explorer Application
+    app_type: non_interactive
+    cross_origin_auth: false
+    custom_login_page_on: true
+    grant_types:
+      - client_credentials
+    is_first_party: true
+    is_token_endpoint_ip_header_trusted: false
+    jwt_configuration:
+      alg: RS256
+      lifetime_in_seconds: 36000
+      secret_encoded: false
+    oidc_conformant: true
+    refresh_token:
+      expiration_type: non-expiring
+      leeway: 0
+      infinite_token_lifetime: true
+      infinite_idle_token_lifetime: true
+      token_lifetime: 31557600
+      idle_token_lifetime: 2592000
+      rotation_type: non-rotating
+    sso_disabled: false
+    token_endpoint_auth_method: client_secret_post
+  - name: Auth0 Management API (Test Application)
+    allowed_clients: []
+    app_type: non_interactive
+    callbacks: []
+    client_aliases: []
+    cross_origin_auth: false
+    custom_login_page_on: true
+    grant_types:
+      - client_credentials
+      - password
+      - http://auth0.com/oauth/grant-type/password-realm
+    is_first_party: true
+    is_token_endpoint_ip_header_trusted: false
+    jwt_configuration:
+      alg: RS256
+      lifetime_in_seconds: 36000
+      secret_encoded: false
+    native_social_login:
+      apple:
+        enabled: false
+      facebook:
+        enabled: false
+    oidc_conformant: true
+    refresh_token:
+      expiration_type: non-expiring
+      leeway: 0
+      infinite_token_lifetime: true
+      infinite_idle_token_lifetime: true
+      token_lifetime: 31557600
+      idle_token_lifetime: 2592000
+      rotation_type: non-rotating
+    sso_disabled: false
+    token_endpoint_auth_method: client_secret_post
+  - name: Default App
+    callbacks: []
+    cross_origin_auth: false
+    custom_login_page_on: true
+    grant_types:
+      - authorization_code
+      - implicit
+      - refresh_token
+      - client_credentials
+    is_first_party: true
+    is_token_endpoint_ip_header_trusted: false
+    jwt_configuration:
+      alg: RS256
+      lifetime_in_seconds: 36000
+      secret_encoded: false
+    oidc_conformant: true
+    refresh_token:
+      expiration_type: non-expiring
+      leeway: 0
+      infinite_token_lifetime: true
+      infinite_idle_token_lifetime: true
+      token_lifetime: 2592000
+      idle_token_lifetime: 1296000
+      rotation_type: non-rotating
+    sso_disabled: false
+  - name: My App
+    allowed_clients: []
+    app_type: spa
+    callbacks:
+      - https://dev-ainxkc0mnpi0u81a.us.webtask.io/auth0-delegated-admin/login
+    client_aliases: []
+    cross_origin_auth: false
+    custom_login_page_on: true
+    grant_types:
+      - authorization_code
+      - implicit
+      - refresh_token
+    is_first_party: true
+    is_token_endpoint_ip_header_trusted: false
+    jwt_configuration:
+      alg: RS256
+      lifetime_in_seconds: 36000
+      secret_encoded: false
+    native_social_login:
+      apple:
+        enabled: false
+      facebook:
+        enabled: false
+    oidc_conformant: true
+    refresh_token:
+      expiration_type: expiring
+      leeway: 0
+      token_lifetime: 2592000
+      idle_token_lifetime: 1296000
+      infinite_token_lifetime: false
+      infinite_idle_token_lifetime: false
+      rotation_type: rotating
+    sso_disabled: false
+    token_endpoint_auth_method: none
+  - name: SaaStart Management
+    allowed_clients: []
+    allowed_logout_urls:
+      - http://localhost:3000
+    app_type: regular_web
+    callbacks:
+      - http://localhost:3000/onboarding/callback
+    client_aliases: []
+    client_metadata: {}
+    cross_origin_auth: false
+    cross_origin_authentication: false
+    custom_login_page_on: true
+    description: >-
+      The SaaStart client to manage tenant resources and facilitate account
+      creation.
+    grant_types:
+      - implicit
+      - authorization_code
+      - refresh_token
+      - client_credentials
+    is_first_party: true
+    is_token_endpoint_ip_header_trusted: false
+    jwt_configuration:
+      alg: RS256
+      secret_encoded: false
+    native_social_login:
+      apple:
+        enabled: false
+      facebook:
+        enabled: false
+    oidc_conformant: true
+    refresh_token:
+      expiration_type: non-expiring
+      leeway: 0
+      infinite_token_lifetime: true
+      infinite_idle_token_lifetime: true
+      token_lifetime: 2592000
+      idle_token_lifetime: 1296000
+      rotation_type: non-rotating
+    sso_disabled: false
+    token_endpoint_auth_method: client_secret_post
+  - name: Xplor Office
+    allowed_clients: []
+    allowed_logout_urls:
+      - http://localhost:3000
+    app_type: non_interactive
+    callbacks:
+      - http://localhost:3000/callback
+    client_aliases: []
+    client_metadata:
+      SSO_LOGIN: 'true'
+    cross_origin_auth: false
+    cross_origin_authentication: false
+    custom_login_page_on: true
+    grant_types:
+      - authorization_code
+      - implicit
+      - refresh_token
+      - client_credentials
+    is_first_party: true
+    is_token_endpoint_ip_header_trusted: false
+    jwt_configuration:
+      alg: RS256
+      lifetime_in_seconds: 36000
+      secret_encoded: false
+    native_social_login:
+      apple:
+        enabled: false
+      facebook:
+        enabled: false
+    oidc_conformant: true
+    refresh_token:
+      expiration_type: non-expiring
+      leeway: 0
+      infinite_token_lifetime: true
+      infinite_idle_token_lifetime: true
+      token_lifetime: 31557600
+      idle_token_lifetime: 2592000
+      rotation_type: non-rotating
+    sso_disabled: false
+    token_endpoint_auth_method: client_secret_post
+  - name: auth0-delegated-admin
+    cross_origin_auth: false
+    custom_login_page_on: true
+    grant_types:
+      - authorization_code
+      - implicit
+      - refresh_token
+      - client_credentials
+    is_first_party: true
+    is_token_endpoint_ip_header_trusted: false
+    jwt_configuration:
+      alg: RS256
+      lifetime_in_seconds: 36000
+      secret_encoded: false
+    oidc_conformant: true
+    refresh_token:
+      expiration_type: non-expiring
+      leeway: 0
+      infinite_token_lifetime: true
+      infinite_idle_token_lifetime: true
+      token_lifetime: 31557600
+      idle_token_lifetime: 2592000
+      rotation_type: non-rotating
+    sso_disabled: false
+    token_endpoint_auth_method: client_secret_post
+  - name: dk-custom
+    app_type: non_interactive
+    cross_origin_auth: false
+    cross_origin_authentication: false
+    custom_login_page_on: true
+    grant_types:
+      - client_credentials
+    is_first_party: true
+    is_token_endpoint_ip_header_trusted: false
+    jwt_configuration:
+      alg: RS256
+      lifetime_in_seconds: 36000
+      secret_encoded: false
+    oidc_conformant: true
+    refresh_token:
+      expiration_type: non-expiring
+      leeway: 0
+      infinite_token_lifetime: true
+      infinite_idle_token_lifetime: true
+      token_lifetime: 31557600
+      idle_token_lifetime: 2592000
+      rotation_type: non-rotating
+    sso_disabled: false
+    token_endpoint_auth_method: client_secret_post
+  - name: dk-test-cicd
+    app_type: non_interactive
+    cross_origin_auth: false
+    cross_origin_authentication: false
+    custom_login_page_on: true
+    grant_types:
+      - client_credentials
+    is_first_party: true
+    is_token_endpoint_ip_header_trusted: false
+    jwt_configuration:
+      alg: RS256
+      lifetime_in_seconds: 36000
+      secret_encoded: false
+    oidc_conformant: true
+    refresh_token:
+      expiration_type: non-expiring
+      leeway: 0
+      infinite_token_lifetime: true
+      infinite_idle_token_lifetime: true
+      token_lifetime: 31557600
+      idle_token_lifetime: 2592000
+      rotation_type: non-rotating
+    sso_disabled: false
+    token_endpoint_auth_method: client_secret_post
+  - name: dk-test-migration
+    allowed_clients: []
+    allowed_logout_urls:
+      - http://localhost:8080/logout
+    app_type: non_interactive
+    callbacks:
+      - http://localhost:8080/callback
+    client_aliases: []
+    cross_origin_auth: false
+    custom_login_page_on: true
+    grant_types:
+      - client_credentials
+      - refresh_token
+      - authorization_code
+      - implicit
+      - password
+      - http://auth0.com/oauth/grant-type/password-realm
+    is_first_party: true
+    is_token_endpoint_ip_header_trusted: false
+    jwt_configuration:
+      alg: RS256
+      lifetime_in_seconds: 36000
+      secret_encoded: false
+    native_social_login:
+      apple:
+        enabled: false
+      facebook:
+        enabled: false
+    oidc_conformant: true
+    refresh_token:
+      expiration_type: non-expiring
+      leeway: 0
+      infinite_token_lifetime: true
+      infinite_idle_token_lifetime: true
+      token_lifetime: 31557600
+      idle_token_lifetime: 2592000
+      rotation_type: non-rotating
+    sso_disabled: false
+    token_endpoint_auth_method: client_secret_post
+    web_origins:
+      - http://localhost:8080
+databases:
+  - name: SaaStart-Shared-Database
+    strategy: auth0
+    display_name: SaaStart
+    enabled_clients: []
+    is_domain_connection: false
+    options:
+      mfa:
+        active: true
+        return_enroll_settings: true
+      import_mode: false
+      customScripts:
+        change_password: ./databases/SaaStart-Shared-Database/change_password.js
+        create: ./databases/SaaStart-Shared-Database/create.js
+        delete: ./databases/SaaStart-Shared-Database/delete.js
+        get_user: ./databases/SaaStart-Shared-Database/get_user.js
+        login: ./databases/SaaStart-Shared-Database/login.js
+        verify: ./databases/SaaStart-Shared-Database/verify.js
+      disable_signup: true
+      passwordPolicy: good
+      passkey_options:
+        challenge_ui: both
+        local_enrollment_enabled: true
+        progressive_enrollment_enabled: true
+      password_history:
+        size: 5
+        enable: false
+      strategy_version: 2
+      password_dictionary:
+        enable: false
+        dictionary: []
+      authentication_methods:
+        passkey:
+          enabled: false
+        password:
+          enabled: true
+      brute_force_protection: true
+      password_no_personal_info:
+        enable: false
+      password_complexity_options:
+        min_length: 8
+      enabledDatabaseCustomization: false
+    realms:
+      - SaaStart-Shared-Database
+  - name: Username-Password-Authentication
+    strategy: auth0
+    enabled_clients:
+      - API Explorer Application
+      - Auth0 Management API (Test Application)
+      - auth0-delegated-admin
+      - Default App
+      - My App
+      - Xplor Office
+    is_domain_connection: false
+    options:
+      mfa:
+        active: true
+        return_enroll_settings: true
+      validation:
+        username:
+          max: 15
+          min: 1
+      import_mode: false
+      customScripts:
+        change_password: ./databases/Username-Password-Authentication/change_password.js
+        create: ./databases/Username-Password-Authentication/create.js
+        delete: ./databases/Username-Password-Authentication/delete.js
+        get_user: ./databases/Username-Password-Authentication/get_user.js
+        login: ./databases/Username-Password-Authentication/login.js
+        verify: ./databases/Username-Password-Authentication/verify.js
+      disable_signup: true
+      passwordPolicy: good
+      passkey_options:
+        challenge_ui: both
+        local_enrollment_enabled: true
+        progressive_enrollment_enabled: true
+      password_history:
+        size: 5
+        enable: false
+      strategy_version: 2
+      requires_username: true
+      password_dictionary:
+        enable: false
+        dictionary: []
+      authentication_methods:
+        passkey:
+          enabled: false
+        password:
+          enabled: true
+      brute_force_protection: true
+      password_no_personal_info:
+        enable: false
+      password_complexity_options:
+        min_length: 8
+      enabledDatabaseCustomization: false
+    realms:
+      - Username-Password-Authentication
+  - name: dk-test
+    strategy: auth0
+    enabled_clients:
+      - dk-test-migration
+    is_domain_connection: false
+    options:
+      mfa:
+        active: true
+        return_enroll_settings: true
+      attributes:
+        email:
+          signup:
+            status: inactive
+            verification:
+              active: false
+          identifier:
+            active: true
+          profile_required: false
+          verification_method: link
+      import_mode: true
+      customScripts:
+        change_password: ./databases/dk-test/change_password.js
+        create: ./databases/dk-test/create.js
+        delete: ./databases/dk-test/delete.js
+        get_user: ./databases/dk-test/get_user.js
+        login: ./databases/dk-test/login.js
+        verify: ./databases/dk-test/verify.js
+      disable_signup: false
+      passwordPolicy: good
+      passkey_options:
+        challenge_ui: both
+        local_enrollment_enabled: true
+        progressive_enrollment_enabled: true
+      password_history:
+        size: 5
+        enable: false
+      strategy_version: 2
+      password_dictionary:
+        enable: false
+        dictionary: []
+      authentication_methods:
+        passkey:
+          enabled: false
+        password:
+          enabled: true
+      brute_force_protection: true
+      password_no_personal_info:
+        enable: false
+      password_complexity_options:
+        min_length: 8
+      enabledDatabaseCustomization: true
+    realms:
+      - dk-test
+  - name: jithesh-test
+    strategy: auth0
+    enabled_clients: []
+    is_domain_connection: false
+    options:
+      mfa:
+        active: true
+        return_enroll_settings: true
+      attributes:
+        email:
+          signup:
+            status: required
+            verification:
+              active: true
+          identifier:
+            active: true
+          profile_required: true
+          verification_method: link
+      import_mode: false
+      customScripts:
+        change_password: ./databases/jithesh-test/change_password.js
+        create: ./databases/jithesh-test/create.js
+        delete: ./databases/jithesh-test/delete.js
+        get_user: ./databases/jithesh-test/get_user.js
+        login: ./databases/jithesh-test/login.js
+        verify: ./databases/jithesh-test/verify.js
+      disable_signup: false
+      passwordPolicy: good
+      passkey_options:
+        challenge_ui: both
+        local_enrollment_enabled: true
+        progressive_enrollment_enabled: true
+      password_history:
+        size: 5
+        enable: false
+      strategy_version: 2
+      password_dictionary:
+        enable: false
+        dictionary: []
+      authentication_methods:
+        passkey:
+          enabled: false
+        password:
+          enabled: true
+      brute_force_protection: true
+      password_no_personal_info:
+        enable: false
+      password_complexity_options:
+        min_length: 8
+      enabledDatabaseCustomization: true
+    realms:
+      - jithesh-test
+connections:
+  - name: facebook
+    strategy: facebook
+    enabled_clients: []
+    is_domain_connection: false
+    options:
+      email: false
+      scope: public_profile
+      ads_read: false
+      client_id: ''
+      user_link: false
+      user_likes: false
+      user_posts: false
+      read_stream: false
+      user_events: false
+      user_gender: false
+      user_groups: false
+      user_photos: false
+      user_status: false
+      user_videos: false
+      manage_pages: false
+      read_mailbox: false
+      user_friends: false
+      publish_pages: false
+      publish_video: false
+      read_insights: false
+      user_birthday: false
+      user_hometown: false
+      user_location: false
+      ads_management: false
+      public_profile: true
+      user_age_range: false
+      leads_retrieval: false
+      pages_messaging: false
+      pages_show_list: false
+      publish_actions: false
+      pages_manage_cta: false
+      publish_to_groups: false
+      user_tagged_places: false
+      business_management: false
+      read_page_mailboxes: false
+      user_managed_groups: false
+      manage_notifications: false
+      set_user_root_attributes: on_first_login
+      groups_access_member_info: false
+      allow_context_profile_field: false
+      pages_messaging_phone_number: false
+      pages_manage_instant_articles: false
+      pages_messaging_subscriptions: false
+      read_audience_network_insights: false
+  - name: google-oauth2
+    strategy: google-oauth2
+    enabled_clients: []
+    is_domain_connection: false
+    options:
+      email: true
+      gmail: false
+      orkut: false
+      scope:
+        - email
+        - profile
+      sites: false
+      tasks: false
+      blogger: false
+      profile: true
+      youtube: false
+      calendar: false
+      contacts: false
+      analytics: false
+      client_id: ''
+      moderator: false
+      coordinate: false
+      picasa_web: false
+      google_plus: false
+      google_books: false
+      google_drive: false
+      spreadsheets: false
+      document_list: false
+      latitude_best: false
+      latitude_city: false
+      url_shortener: false
+      webmaster_tools: false
+      chrome_web_store: false
+      allowed_audiences: ''
+      adsense_management: false
+      google_drive_files: false
+      coordinate_readonly: false
+      google_cloud_storage: false
+      content_api_for_shopping: false
+      google_affiliate_network: false
+  - name: test-sso
+    strategy: waad
+    display_name: MyXplorStaging
+    enabled_clients:
+      - dk-test-migration
+      - Xplor Office
+    is_domain_connection: false
+    options:
+      domain: myxplorstaging.onmicrosoft.com
+      client_id: 9b15138d-10cb-4e3b-ba42-d768ec1c3338
+      use_wsfed: false
+      app_domain: dev-ainxkc0mnpi0u81a.us.auth0.com
+      ext_groups: false
+      ext_profile: true
+      thumbprints:
+        - CF17A0D9638DA539303791A679872E4DDB42E89D
+        - 24172BB2B28991C401F47405E7005F5CDFE961C1
+        - CF5AEC6071C9F7EF26820B781EC66EF012A404FC
+        - 2ED8047F8E84097E9E4579912EFC013C96A07F0C
+        - 8ED35E8FCA79D8B2814AB76F548694D6AF315F7A
+      identity_api: microsoft-identity-platform-v2.0
+      basic_profile: false
+      client_secret: ${{ secrets.AZURE_AD_CLIENT_SECRET_STAGING }}
+      tenant_domain: myxplorstaging.onmicrosoft.com
+      waad_protocol: openid-connect
+      domain_aliases:
+        - myxplorstaging.onmicrosoft.com
+      api_enable_users: false
+      userid_attribute: oid
+      ext_nested_groups: false
+      useCommonEndpoint: false
+      waad_common_endpoint: false
+      set_user_root_attributes: on_first_login
+      should_trust_email_verified_connection: never_set_emails_as_verified
+    show_as_button: true
+  - name: windowslive
+    strategy: windowslive
+    enabled_clients: []
+    is_domain_connection: false
+    options:
+      scope:
+        - https://graph.microsoft.com/User.Read
+      signin: true
+      client_id: ''
+      graph_user: true
+      graph_files: false
+      graph_notes: false
+      graph_tasks: false
+      graph_device: false
+      graph_emails: false
+      graph_contacts: false
+      offline_access: false
+      graph_calendars: false
+      graph_files_all: false
+      strategy_version: 2
+      graph_user_update: false
+      graph_files_update: false
+      graph_notes_create: false
+      graph_notes_update: false
+      graph_tasks_update: false
+      graph_emails_update: false
+      graph_user_activity: false
+      graph_device_command: false
+      graph_contacts_update: false
+      graph_calendars_update: false
+      graph_files_all_update: false
+      set_user_root_attributes: on_first_login
+tenant:
+  customize_mfa_in_postlogin_action: true
+  default_audience: ''
+  default_directory: Username-Password-Authentication
+  enabled_locales:
+    - en
+  flags:
+    enable_client_connections: false
+    revoke_refresh_token_grant: false
+    disable_clickjack_protection_headers: false
+  friendly_name: SaaStart
+  oidc_logout:
+    rp_logout_end_session_endpoint_discovery: true
+  picture_url: https://cdn.auth0.com/blog/auth0_by_okta_logo_black.png
+  sandbox_version: '18'
+  universal_login: {}
+emailProvider: {}
+emailTemplates:
+  - template: verify_email
+    body: ./emailTemplates/verify_email.html
+    enabled: true
+    from: ''
+    resultUrl: '{{ application.callback_domain }}/onboarding/create'
+    subject: ''
+    syntax: liquid
+    urlLifetimeInSeconds: 432000
+clientGrants:
+  - client_id: API Explorer Application
+    audience: https://dev-ainxkc0mnpi0u81a.us.auth0.com/api/v2/
+    scope:
+      - read:client_grants
+      - create:client_grants
+      - delete:client_grants
+      - update:client_grants
+      - read:users
+      - update:users
+      - delete:users
+      - create:users
+      - read:users_app_metadata
+      - update:users_app_metadata
+      - delete:users_app_metadata
+      - create:users_app_metadata
+      - read:user_custom_blocks
+      - create:user_custom_blocks
+      - delete:user_custom_blocks
+      - create:user_tickets
+      - read:clients
+      - update:clients
+      - delete:clients
+      - create:clients
+      - read:client_keys
+      - update:client_keys
+      - delete:client_keys
+      - create:client_keys
+      - read:connections
+      - update:connections
+      - delete:connections
+      - create:connections
+      - read:resource_servers
+      - update:resource_servers
+      - delete:resource_servers
+      - create:resource_servers
+      - read:device_credentials
+      - update:device_credentials
+      - delete:device_credentials
+      - create:device_credentials
+      - read:rules
+      - update:rules
+      - delete:rules
+      - create:rules
+      - read:rules_configs
+      - update:rules_configs
+      - delete:rules_configs
+      - read:hooks
+      - update:hooks
+      - delete:hooks
+      - create:hooks
+      - read:actions
+      - update:actions
+      - delete:actions
+      - create:actions
+      - read:email_provider
+      - update:email_provider
+      - delete:email_provider
+      - create:email_provider
+      - blacklist:tokens
+      - read:stats
+      - read:insights
+      - read:tenant_settings
+      - update:tenant_settings
+      - read:logs
+      - read:logs_users
+      - read:shields
+      - create:shields
+      - update:shields
+      - delete:shields
+      - read:anomaly_blocks
+      - delete:anomaly_blocks
+      - update:triggers
+      - read:triggers
+      - read:grants
+      - delete:grants
+      - read:guardian_factors
+      - update:guardian_factors
+      - read:guardian_enrollments
+      - delete:guardian_enrollments
+      - create:guardian_enrollment_tickets
+      - read:user_idp_tokens
+      - create:passwords_checking_job
+      - delete:passwords_checking_job
+      - read:custom_domains
+      - delete:custom_domains
+      - create:custom_domains
+      - update:custom_domains
+      - read:email_templates
+      - create:email_templates
+      - update:email_templates
+      - read:mfa_policies
+      - update:mfa_policies
+      - read:roles
+      - create:roles
+      - delete:roles
+      - update:roles
+      - read:prompts
+      - update:prompts
+      - read:branding
+      - update:branding
+      - delete:branding
+      - read:log_streams
+      - create:log_streams
+      - delete:log_streams
+      - update:log_streams
+      - create:signing_keys
+      - read:signing_keys
+      - update:signing_keys
+      - read:limits
+      - update:limits
+      - create:role_members
+      - read:role_members
+      - delete:role_members
+      - read:entitlements
+      - read:attack_protection
+      - update:attack_protection
+      - read:organizations_summary
+      - create:authentication_methods
+      - read:authentication_methods
+      - update:authentication_methods
+      - delete:authentication_methods
+      - read:organizations
+      - update:organizations
+      - create:organizations
+      - delete:organizations
+      - create:organization_members
+      - read:organization_members
+      - delete:organization_members
+      - create:organization_connections
+      - read:organization_connections
+      - update:organization_connections
+      - delete:organization_connections
+      - create:organization_member_roles
+      - read:organization_member_roles
+      - delete:organization_member_roles
+      - create:organization_invitations
+      - read:organization_invitations
+      - delete:organization_invitations
+      - read:scim_config
+      - create:scim_config
+      - update:scim_config
+      - delete:scim_config
+      - create:scim_token
+      - read:scim_token
+      - delete:scim_token
+      - delete:phone_providers
+      - create:phone_providers
+      - read:phone_providers
+      - update:phone_providers
+      - delete:phone_templates
+      - create:phone_templates
+      - read:phone_templates
+      - update:phone_templates
+      - create:encryption_keys
+      - read:encryption_keys
+      - update:encryption_keys
+      - delete:encryption_keys
+      - read:sessions
+      - delete:sessions
+      - read:refresh_tokens
+      - delete:refresh_tokens
+      - create:self_service_profiles
+      - read:self_service_profiles
+      - update:self_service_profiles
+      - delete:self_service_profiles
+      - create:sso_access_tickets
+      - read:forms
+      - update:forms
+      - delete:forms
+      - create:forms
+      - read:flows
+      - update:flows
+      - delete:flows
+      - create:flows
+      - read:flows_vault
+      - read:flows_vault_connections
+      - update:flows_vault_connections
+      - delete:flows_vault_connections
+      - create:flows_vault_connections
+      - read:flows_executions
+      - delete:flows_executions
+      - read:connections_options
+      - update:connections_options
+      - read:self_service_profile_custom_texts
+      - update:self_service_profile_custom_texts
+      - read:client_credentials
+      - create:client_credentials
+      - update:client_credentials
+      - delete:client_credentials
+  - client_id: Auth0 Management API (Test Application)
+    audience: dk-test
+    scope: []
+  - client_id: Auth0 Management API (Test Application)
+    audience: https://dev-ainxkc0mnpi0u81a.us.auth0.com/api/v2/
+    scope:
+      - update:client_grants
+      - read:users
+      - update:users
+      - update:users_app_metadata
+      - update:clients
+      - update:client_keys
+      - update:connections
+      - update:resource_servers
+      - update:device_credentials
+      - update:rules
+      - update:rules_configs
+      - update:hooks
+      - update:actions
+      - update:email_provider
+      - update:tenant_settings
+      - update:shields
+      - update:triggers
+      - update:guardian_factors
+      - update:custom_domains
+      - update:email_templates
+      - update:mfa_policies
+      - update:roles
+      - update:prompts
+      - update:branding
+      - update:log_streams
+      - update:signing_keys
+      - update:limits
+      - update:attack_protection
+      - update:authentication_methods
+      - update:organizations
+      - update:organization_connections
+      - update:scim_config
+      - update:phone_providers
+      - update:phone_templates
+      - update:encryption_keys
+      - update:self_service_profiles
+      - update:forms
+      - update:flows
+      - update:flows_vault_connections
+      - update:connections_options
+      - update:self_service_profile_custom_texts
+      - update:client_credentials
+  - client_id: SaaStart Management
+    audience: https://dev-ainxkc0mnpi0u81a.us.auth0.com/api/v2/
+    scope:
+      - read:users
+      - update:users
+      - delete:users
+      - create:users
+      - read:connections
+      - update:connections
+      - delete:connections
+      - create:connections
+      - read:organizations_summary
+      - read:organizations
+      - update:organizations
+      - create:organizations
+      - delete:organizations
+      - create:organization_members
+      - read:organization_members
+      - delete:organization_members
+      - create:organization_connections
+      - read:organization_connections
+      - update:organization_connections
+      - delete:organization_connections
+      - create:organization_member_roles
+      - read:organization_member_roles
+      - delete:organization_member_roles
+      - create:organization_invitations
+      - read:organization_invitations
+      - delete:organization_invitations
+      - read:guardian_factors
+      - read:authentication_methods
+      - delete:authentication_methods
+      - create:guardian_enrollment_tickets
+      - create:scim_token
+      - read:scim_token
+      - delete:scim_token
+      - read:scim_config
+      - create:scim_config
+      - update:scim_config
+      - delete:scim_config
+  - client_id: auth0-delegated-admin
+    audience: https://dev-ainxkc0mnpi0u81a.us.auth0.com/api/v2/
+    scope:
+      - read:clients
+      - delete:clients
+      - read:connections
+      - read:users
+      - update:users
+      - delete:users
+      - create:users
+      - read:logs
+      - read:device_credentials
+      - update:device_credentials
+      - delete:device_credentials
+      - delete:guardian_enrollments
+  - client_id: dk-custom
+    audience: https://dev-ainxkc0mnpi0u81a.us.auth0.com/api/v2/
+    scope:
+      - read:client_grants
+      - create:client_grants
+      - delete:client_grants
+      - update:client_grants
+      - read:users
+      - update:users
+      - delete:users
+      - create:users
+      - read:users_app_metadata
+      - update:users_app_metadata
+      - delete:users_app_metadata
+      - create:users_app_metadata
+      - read:user_custom_blocks
+      - create:user_custom_blocks
+      - delete:user_custom_blocks
+      - create:user_tickets
+      - read:clients
+      - update:clients
+      - delete:clients
+      - create:clients
+      - read:client_keys
+      - update:client_keys
+      - delete:client_keys
+      - create:client_keys
+      - read:connections
+      - update:connections
+      - delete:connections
+      - create:connections
+      - read:resource_servers
+      - update:resource_servers
+      - delete:resource_servers
+      - create:resource_servers
+      - read:device_credentials
+      - update:device_credentials
+      - delete:device_credentials
+      - create:device_credentials
+      - read:rules
+      - update:rules
+      - delete:rules
+      - create:rules
+      - read:rules_configs
+      - update:rules_configs
+      - delete:rules_configs
+      - read:hooks
+      - update:hooks
+      - delete:hooks
+      - create:hooks
+      - read:actions
+      - update:actions
+      - delete:actions
+      - create:actions
+      - read:email_provider
+      - update:email_provider
+      - delete:email_provider
+      - create:email_provider
+      - blacklist:tokens
+      - read:stats
+      - read:insights
+      - read:tenant_settings
+      - update:tenant_settings
+      - read:logs
+      - read:logs_users
+      - read:shields
+      - create:shields
+      - update:shields
+      - delete:shields
+      - read:anomaly_blocks
+      - delete:anomaly_blocks
+      - update:triggers
+      - read:triggers
+      - read:grants
+      - delete:grants
+      - read:guardian_factors
+      - update:guardian_factors
+      - read:guardian_enrollments
+      - delete:guardian_enrollments
+      - create:guardian_enrollment_tickets
+      - read:user_idp_tokens
+      - create:passwords_checking_job
+      - delete:passwords_checking_job
+      - read:custom_domains
+      - delete:custom_domains
+      - create:custom_domains
+      - update:custom_domains
+      - read:email_templates
+      - create:email_templates
+      - update:email_templates
+      - read:mfa_policies
+      - update:mfa_policies
+      - read:roles
+      - create:roles
+      - delete:roles
+      - update:roles
+      - read:prompts
+      - update:prompts
+      - read:branding
+      - update:branding
+      - delete:branding
+      - read:log_streams
+      - create:log_streams
+      - delete:log_streams
+      - update:log_streams
+      - create:signing_keys
+      - read:signing_keys
+      - update:signing_keys
+      - read:limits
+      - update:limits
+      - create:role_members
+      - read:role_members
+      - delete:role_members
+      - read:entitlements
+      - read:attack_protection
+      - update:attack_protection
+      - read:organizations_summary
+      - create:authentication_methods
+      - read:authentication_methods
+      - update:authentication_methods
+      - delete:authentication_methods
+      - read:organizations
+      - update:organizations
+      - create:organizations
+      - delete:organizations
+      - create:organization_members
+      - read:organization_members
+      - delete:organization_members
+      - create:organization_connections
+      - read:organization_connections
+      - update:organization_connections
+      - delete:organization_connections
+      - create:organization_member_roles
+      - read:organization_member_roles
+      - delete:organization_member_roles
+      - create:organization_invitations
+      - read:organization_invitations
+      - delete:organization_invitations
+      - read:scim_config
+      - create:scim_config
+      - update:scim_config
+      - delete:scim_config
+      - create:scim_token
+      - read:scim_token
+      - delete:scim_token
+      - delete:phone_providers
+      - create:phone_providers
+      - read:phone_providers
+      - update:phone_providers
+      - delete:phone_templates
+      - create:phone_templates
+      - read:phone_templates
+      - update:phone_templates
+      - create:encryption_keys
+      - read:encryption_keys
+      - update:encryption_keys
+      - delete:encryption_keys
+      - read:sessions
+      - delete:sessions
+      - read:refresh_tokens
+      - delete:refresh_tokens
+      - create:self_service_profiles
+      - read:self_service_profiles
+      - update:self_service_profiles
+      - delete:self_service_profiles
+      - create:sso_access_tickets
+      - delete:sso_access_tickets
+      - read:forms
+      - update:forms
+      - delete:forms
+      - create:forms
+      - read:flows
+      - update:flows
+      - delete:flows
+      - create:flows
+      - read:flows_vault
+      - read:flows_vault_connections
+      - update:flows_vault_connections
+      - delete:flows_vault_connections
+      - create:flows_vault_connections
+      - read:flows_executions
+      - delete:flows_executions
+      - read:connections_options
+      - update:connections_options
+      - read:self_service_profile_custom_texts
+      - update:self_service_profile_custom_texts
+      - read:client_credentials
+      - create:client_credentials
+      - update:client_credentials
+      - delete:client_credentials
+      - read:organization_client_grants
+      - create:organization_client_grants
+      - delete:organization_client_grants
+  - client_id: dk-test-migration
+    audience: https://dev-ainxkc0mnpi0u81a.us.auth0.com/api/v2/
+    scope: []
+  - client_id: dk-test-migration
+    audience: dk-test
+    scope:
+      - read:organizations
+      - '*'
+      - create:users
+      - read:users
+      - read:connections
+      - create:passwords_checkin
+guardianFactors:
+  - name: duo
+    enabled: false
+  - name: email
+    enabled: false
+  - name: otp
+    enabled: true
+  - name: push-notification
+    enabled: false
+  - name: recovery-code
+    enabled: false
+  - name: sms
+    enabled: false
+  - name: webauthn-platform
+    enabled: false
+  - name: webauthn-roaming
+    enabled: true
+guardianFactorProviders: []
+guardianFactorTemplates: []
+guardianPolicies:
+  policies: []
+guardianPhoneFactorSelectedProvider:
+  provider: auth0
+guardianPhoneFactorMessageTypes:
+  message_types: []
+roles:
+  - name: Educator
+    description: 'Educator Role '
+    permissions: []
+  - name: Lead Educator
+    description: Lead educator role
+    permissions: []
+  - name: Test Role
+    description: test
+    permissions:
+      - permission_name: '*'
+        resource_server_identifier: dk-test
+      - permission_name: read:organizations
+        resource_server_identifier: dk-test
+      - permission_name: read:test
+        resource_server_identifier: https://quickstarts/api
+  - name: admin
+    description: Manage the organization's configuration.
+    permissions: []
+  - name: member
+    description: Member of an organization.
+    permissions: []
+branding:
+  logo_url: https://cdn.auth0.com/blog/auth0_by_okta_logo_black.png
+  templates: []
+prompts:
+  customText:
+    en:
+      login:
+        login:
+          description: Log in to continue to ${clientName}.
+      login-id:
+        login-id:
+          description: Log in to continue to ${clientName}.
+      login-password:
+        login-password:
+          description: Enter your password to continue to ${clientName}
+  partials: {}
+  universal_login_experience: new
+actions:
+  - name: Add Default Role
+    code: ./actions/Add Default Role/code.js
+    dependencies:
+      - name: auth0
+        version: 4.4.0
+    deployed: true
+    runtime: node18-actions
+    secrets:
+      - name: DOMAIN
+      - name: CLIENT_ID
+      - name: CLIENT_SECRET
+      - name: MEMBER_ROLE_ID
+    status: built
+    supported_triggers:
+      - id: post-login
+        version: v3
+  - name: Add Role to Tokens
+    code: ./actions/Add Role to Tokens/code.js
+    dependencies: []
+    deployed: true
+    runtime: node18-actions
+    secrets:
+      - name: CUSTOM_CLAIMS_NAMESPACE
+    status: built
+    supported_triggers:
+      - id: post-login
+        version: v3
+  - name: Security Policies
+    code: ./actions/Security Policies/code.js
+    dependencies: []
+    deployed: true
+    runtime: node18-actions
+    secrets:
+      - name: DASHBOARD_CLIENT_ID
+    status: built
+    supported_triggers:
+      - id: post-login
+        version: v3
+  - name: TestCustomAction
+    code: ./actions/TestCustomAction/code.js
+    dependencies:
+      - name: auth0
+        version: 4.10.0
+      - name: dotenv
+        version: 16.4.5
+    deployed: true
+    runtime: node18-actions
+    secrets: []
+    status: built
+    supported_triggers:
+      - id: post-login
+        version: v3
+  - name: TestEmailConfirmAction
+    code: ./actions/TestEmailConfirmAction/code.js
+    dependencies: []
+    deployed: true
+    runtime: node18-actions
+    secrets: []
+    status: built
+    supported_triggers:
+      - id: post-login
+        version: v3
+  - name: add-roles
+    code: ./actions/add-roles/code.js
+    dependencies: []
+    deployed: true
+    runtime: node18-actions
+    secrets: []
+    status: built
+    supported_triggers:
+      - id: post-login
+        version: v3
+  - name: create-organization
+    code: ./actions/create-organization/code.js
+    dependencies:
+      - name: auth0
+        version: 4.13.0
+    deployed: true
+    runtime: node18-actions
+    secrets:
+      - name: AUTH0_DOMAIN
+      - name: CLIENT_ID
+      - name: CLIENT_SECRET
+    status: built
+    supported_triggers:
+      - id: post-login
+        version: v3
+  - name: object mapper test
+    code: ./actions/object mapper test/code.js
+    dependencies: []
+    deployed: true
+    runtime: node18-actions
+    secrets: []
+    status: built
+    supported_triggers:
+      - id: post-login
+        version: v3
+  - name: object-mapper-test
+    code: ./actions/object-mapper-test/code.js
+    dependencies: []
+    deployed: false
+    runtime: node18-actions
+    secrets: []
+    status: built
+    supported_triggers:
+      - id: post-login
+        version: v3
+  - name: test-mapper-custom-claim
+    code: ./actions/test-mapper-custom-claim/code.js
+    dependencies: []
+    deployed: false
+    runtime: node18-actions
+    secrets: []
+    status: built
+    supported_triggers:
+      - id: post-login
+        version: v3
+triggers:
+  post-login:
+    - action_name: object mapper test
+      display_name: object mapper test
+    - action_name: create-organization
+      display_name: create-organization
+    - action_name: Add Default Role
+      display_name: Add Default Role
+    - action_name: Add Role to Tokens
+      display_name: Add Role to Tokens
+    - action_name: Security Policies
+      display_name: Security Policies
+organizations:
+  - name: corp1-syd-ho-c1
+    client_grants: []
+    connections:
+      - name: Username-Password-Authentication
+        assign_membership_on_login: false
+        is_signup_enabled: false
+        show_as_button: true
+    display_name: Sydney Center One
+    metadata:
+      BaseOrg: Corp1
+      domainVerificationToken: b3c17cda22449b754ce33a8aa92fa7a3c8eae2af610684b8aeda490a0d24fdba
+      ParentOrg: SYDHO
+  - name: corp1-syd-ho-c2
+    client_grants: []
+    connections:
+      - name: Username-Password-Authentication
+        assign_membership_on_login: false
+        is_signup_enabled: false
+        show_as_button: true
+    display_name: Sydney Center Two
+    metadata:
+      BaseOrg: Corp1
+      domainVerificationToken: 5ef1740d4535a9686bed6ade14cf3a52bab4d2d726fd67aa2b4835a64f7c1e12
+      ParentOrg: SYDHO
+      sso_enabled: 'true'
+  - name: test-org-1
+    client_grants: []
+    connections: []
+    display_name: test org 1
+  - name: test-org-2
+    client_grants: []
+    connections: []
+    display_name: test org 2
+attackProtection:
+  breachedPasswordDetection:
+    enabled: false
+    shields: []
+    admin_notification_frequency: []
+    method: standard
+    stage:
+      pre-user-registration:
+        shields: []
+  bruteForceProtection:
+    enabled: true
+    shields:
+      - block
+      - user_notification
+    mode: count_per_identifier_and_ip
+    allowlist: []
+    max_attempts: 10
+  suspiciousIpThrottling:
+    enabled: true
+    shields:
+      - admin_notification
+      - block
+    allowlist: []
+    stage:
+      pre-login:
+        max_attempts: 100
+        rate: 864000
+      pre-user-registration:
+        max_attempts: 50
+        rate: 1200
+logStreams: []
+customDomains: []
+themes:
+  - borders:
+      button_border_radius: 8
+      button_border_weight: 1
+      buttons_style: rounded
+      input_border_radius: 10
+      input_border_weight: 1
+      inputs_style: rounded
+      show_widget_shadow: false
+      widget_border_weight: 0
+      widget_corner_radius: 24
+    colors:
+      base_focus_color: '#0a0a0a'
+      base_hover_color: '#0a0a0a'
+      body_text: '#a3a3a3'
+      captcha_widget_theme: light
+      error: '#d03c38'
+      header: '#0a0a0a'
+      icons: '#a3a3a3'
+      input_background: '#ffffff'
+      input_border: '#262626'
+      input_filled_text: '#0a0a0a'
+      input_labels_placeholders: '#a3a3a3'
+      links_focused_components: '#0a0a0a'
+      primary_button: '#DB3B03'
+      primary_button_label: '#ffffff'
+      secondary_button_border: '#a3a3a3'
+      secondary_button_label: '#0a0a0a'
+      success: '#13a688'
+      widget_background: '#ffffff'
+      widget_border: '#0a0a0a'
+    displayName: Unnamed Theme
+    fonts:
+      body_text:
+        bold: false
+        size: 87.5
+      buttons_text:
+        bold: false
+        size: 100
+      font_url: ''
+      input_labels:
+        bold: false
+        size: 87.5
+      links:
+        bold: false
+        size: 87.5
+      links_style: underlined
+      reference_text_size: 16
+      subtitle:
+        bold: false
+        size: 87.5
+      title:
+        bold: true
+        size: 150
+    page_background:
+      background_color: '#0a0a0a'
+      background_image_url: https://dsetjzxhxo9kr.cloudfront.net/home/splash.png
+      page_layout: right
+    widget:
+      header_text_alignment: center
+      logo_height: 52
+      logo_position: center
+      logo_url: https://products.myxplor.com/assets/images/office_24px.png
+      social_buttons_layout: bottom
+forms:
+  - name: Phone OTP verification with Twilio
+    body: ./forms/Phone OTP verification with Twilio.json
+  - name: Role Selection Form
+    body: ./forms/Role Selection Form.json
+flows:
+  - name: Check phone & generate OTP
+    body: ./flows/Check phone & generate OTP.json
+  - name: Role Selection Flow
+    body: ./flows/Role Selection Flow.json
+  - name: Verify phone OTP & Update user
+    body: ./flows/Verify phone OTP & Update user.json
+flowVaultConnections:
+  - name: REPLACE_WITH_M2M_CONNECTION
+    app_id: AUTH0
+    ready: false
+  - name: REPLACE_WITH_TWILIO_CONNECTION
+    app_id: TWILIO
+    ready: false
+selfServiceProfiles: []

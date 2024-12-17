@@ -1,0 +1,110 @@
+{
+  "name": "Role Selection Form",
+  "languages": {
+    "primary": "en"
+  },
+  "nodes": [
+    {
+      "id": "step_PoSk",
+      "type": "STEP",
+      "coordinates": {
+        "x": 482,
+        "y": -4
+      },
+      "alias": "Role Selection",
+      "config": {
+        "components": [
+          {
+            "id": "choice_dGx7",
+            "category": "FIELD",
+            "type": "CHOICE",
+            "label": "Select your Role",
+            "required": true,
+            "sensitive": false,
+            "config": {
+              "multiple": false,
+              "options": [
+                {
+                  "label": "Educator",
+                  "value": "educator"
+                },
+                {
+                  "label": "Parent",
+                  "value": "parent"
+                }
+              ]
+            }
+          },
+          {
+            "id": "next_button_0WNu",
+            "category": "BLOCK",
+            "type": "NEXT_BUTTON",
+            "config": {
+              "text": "Continue"
+            }
+          }
+        ],
+        "next_node": "$ending"
+      }
+    },
+    {
+      "id": "router_GZN6",
+      "type": "ROUTER",
+      "coordinates": {
+        "x": 468,
+        "y": 81
+      },
+      "alias": "Role Router",
+      "config": {
+        "rules": [
+          {
+            "id": "id_2781461847528",
+            "alias": "Educator Router",
+            "condition": {
+              "operands": [
+                {
+                  "operands": [
+                    "{{fields.choice_dGx7}}",
+                    "educator"
+                  ],
+                  "operator": "EQ"
+                }
+              ],
+              "operator": "AND"
+            }
+          },
+          {
+            "id": "id_7761976928861",
+            "alias": "Parent Router",
+            "condition": {
+              "operands": [
+                {
+                  "operands": [
+                    "{{fields.choice_dGx7}}",
+                    "parent"
+                  ],
+                  "operator": "EQ"
+                }
+              ],
+              "operator": "AND"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "start": {
+    "next_node": "step_PoSk",
+    "coordinates": {
+      "x": -54,
+      "y": 40
+    }
+  },
+  "ending": {
+    "resume_flow": true,
+    "coordinates": {
+      "x": 1250,
+      "y": 1
+    }
+  }
+}
