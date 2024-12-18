@@ -723,7 +723,7 @@ tenant:
     colors:
       page_background: '#000000'
       primary: '#635dff'
-emailProvider: {}
+# emailProvider: {}
 emailTemplates:
   - template: verify_email
     body: ./emailTemplates/verify_email.html
