@@ -3,7 +3,7 @@ rulesConfigs: []
 pages: []
 resourceServers:
   - name: dk-test
-    identifier: dk-test
+    identifier: '##API_IDENTIFIER##'
     allow_offline_access: false
     scopes:
       - value: read:organizations
@@ -199,8 +199,7 @@ clients:
     allowed_logout_urls:
       - http://localhost:3000
     app_type: non_interactive
-    callbacks:
-      - http://localhost:3000/callback
+    callbacks: @@APP_CALLBACKS_3000@@
     client_aliases: []
     client_metadata:
       SSO_LOGIN: 'true'
@@ -312,8 +311,7 @@ clients:
     allowed_logout_urls:
       - http://localhost:8080/logout
     app_type: non_interactive
-    callbacks:
-      - http://localhost:8080/callback
+    callbacks: @@APP_CALLBACKS_8080@@
     client_aliases: []
     cross_origin_auth: false
     custom_login_page_on: true
@@ -662,7 +660,6 @@ connections:
         - 8ED35E8FCA79D8B2814AB76F548694D6AF315F7A
       identity_api: microsoft-identity-platform-v2.0
       basic_profile: false
-      client_secret: ${{ secrets.AZURE_AD_CLIENT_SECRET_STAGING }}
       tenant_domain: myxplorstaging.onmicrosoft.com
       waad_protocol: openid-connect
       domain_aliases:
@@ -722,7 +719,10 @@ tenant:
     rp_logout_end_session_endpoint_discovery: true
   picture_url: https://cdn.auth0.com/blog/auth0_by_okta_logo_black.png
   sandbox_version: '18'
-  universal_login: {}
+  universal_login:
+    colors:
+      page_background: '#000000'
+      primary: '#635dff'
 emailProvider: {}
 emailTemplates:
   - template: verify_email
@@ -1279,6 +1279,9 @@ roles:
     description: Member of an organization.
     permissions: []
 branding:
+  colors:
+    page_background: '#000000'
+    primary: '#635dff'
   logo_url: https://cdn.auth0.com/blog/auth0_by_okta_logo_black.png
   templates: []
 prompts:
@@ -1286,13 +1289,15 @@ prompts:
     en:
       login:
         login:
-          description: Log in to continue to ${clientName}.
+          description: Log in to ${clientName}.
       login-id:
         login-id:
           description: Log in to continue to ${clientName}.
       login-password:
         login-password:
           description: Enter your password to continue to ${clientName}
+  enable_ulp_wcag_compliance: false
+  identifier_first: false
   partials: {}
   universal_login_experience: new
 actions:
@@ -1547,13 +1552,13 @@ themes:
         size: 150
     page_background:
       background_color: '#0a0a0a'
-      background_image_url: https://dsetjzxhxo9kr.cloudfront.net/home/splash.png
+      background_image_url: ''
       page_layout: right
     widget:
       header_text_alignment: center
       logo_height: 52
       logo_position: center
-      logo_url: https://products.myxplor.com/assets/images/office_24px.png
+      logo_url: ''
       social_buttons_layout: bottom
 forms:
   - name: Phone OTP verification with Twilio
