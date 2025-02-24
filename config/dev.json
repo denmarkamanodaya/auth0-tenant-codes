@@ -7,6 +7,7 @@
       "APP_CALLBACKS_8080": ["http://localhost:8080/callback"],
       "API_IDENTIFIER": "dk-test"
     },
+    "AUTH0_EXCLUDED": ["emailProvider"],
     "EXCLUDED_PROPS": {
       "clients": ["client_secret"],
       "connections": ["options.client_secret"]
