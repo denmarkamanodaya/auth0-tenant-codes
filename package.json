@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "export:dev": "a0deploy export --config_file ./config/dev.json --format directory --output_folder src",
-    "import:dev": "a0deploy import --input_file ./src/tenant.yaml --config_file ./config/dev.json"
+    "import:dev": "a0deploy import --config_file ./config/dev.json --input_file src"
   },
   "author": "",
   "license": "ISC",
