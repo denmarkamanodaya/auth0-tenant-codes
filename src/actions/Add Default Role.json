@@ -1,0 +1,33 @@
+{
+  "name": "Add Default Role",
+  "code": "src/actions/Add Default Role/code.js",
+  "runtime": "node18-actions",
+  "status": "built",
+  "dependencies": [
+    {
+      "name": "auth0",
+      "version": "4.4.0"
+    }
+  ],
+  "secrets": [
+    {
+      "name": "DOMAIN"
+    },
+    {
+      "name": "CLIENT_ID"
+    },
+    {
+      "name": "CLIENT_SECRET"
+    },
+    {
+      "name": "MEMBER_ROLE_ID"
+    }
+  ],
+  "supported_triggers": [
+    {
+      "id": "post-login",
+      "version": "v3"
+    }
+  ],
+  "deployed": true
+}

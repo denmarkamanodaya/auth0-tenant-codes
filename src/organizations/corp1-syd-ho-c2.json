@@ -1,0 +1,25 @@
+{
+  "name": "corp1-syd-ho-c2",
+  "display_name": "Sydney Center Two",
+  "branding": {
+    "colors": {
+      "page_background": "#87CEEB",
+      "primary": "#ffffff"
+    }
+  },
+  "metadata": {
+    "BaseOrg": "Corp1",
+    "domainVerificationToken": "5ef1740d4535a9686bed6ade14cf3a52bab4d2d726fd67aa2b4835a64f7c1e12",
+    "ParentOrg": "SYDHO",
+    "sso_enabled": "true"
+  },
+  "connections": [
+    {
+      "name": "Username-Password-Authentication",
+      "assign_membership_on_login": false,
+      "is_signup_enabled": false,
+      "show_as_button": true
+    }
+  ],
+  "client_grants": []
+}

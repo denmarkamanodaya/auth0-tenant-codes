@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "export:dev": "a0deploy export --strip --format yaml --output_folder src --config_file ./config/dev.json",
+    "export:dev": "a0deploy export --config_file ./config/dev.json --format directory --output_folder src",
     "import:dev": "a0deploy import --input_file ./src/tenant.yaml --config_file ./config/dev.json"
   },
   "author": "",

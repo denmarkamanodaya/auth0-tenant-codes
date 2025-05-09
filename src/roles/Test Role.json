@@ -1,0 +1,18 @@
+{
+  "name": "Test Role",
+  "description": "test",
+  "permissions": [
+    {
+      "permission_name": "*",
+      "resource_server_identifier": "dk-test"
+    },
+    {
+      "permission_name": "read:organizations",
+      "resource_server_identifier": "dk-test"
+    },
+    {
+      "permission_name": "read:test",
+      "resource_server_identifier": "https://quickstarts/api"
+    }
+  ]
+}

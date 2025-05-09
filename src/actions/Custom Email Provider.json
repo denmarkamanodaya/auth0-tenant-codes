@@ -1,0 +1,15 @@
+{
+  "name": "Custom Email Provider",
+  "code": "src/actions/Custom Email Provider/code.js",
+  "runtime": "node18",
+  "status": "built",
+  "dependencies": [],
+  "secrets": [],
+  "supported_triggers": [
+    {
+      "id": "custom-email-provider",
+      "version": "v1"
+    }
+  ],
+  "deployed": false
+}

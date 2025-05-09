@@ -1,0 +1,19 @@
+{
+  "name": "Security Policies",
+  "code": "src/actions/Security Policies/code.js",
+  "runtime": "node18-actions",
+  "status": "built",
+  "dependencies": [],
+  "secrets": [
+    {
+      "name": "DASHBOARD_CLIENT_ID"
+    }
+  ],
+  "supported_triggers": [
+    {
+      "id": "post-login",
+      "version": "v3"
+    }
+  ],
+  "deployed": true
+}

@@ -1,0 +1,24 @@
+{
+  "name": "TestCustomAction",
+  "code": "src/actions/TestCustomAction/code.js",
+  "runtime": "node18-actions",
+  "status": "built",
+  "dependencies": [
+    {
+      "name": "auth0",
+      "version": "4.10.0"
+    },
+    {
+      "name": "dotenv",
+      "version": "16.4.5"
+    }
+  ],
+  "secrets": [],
+  "supported_triggers": [
+    {
+      "id": "post-login",
+      "version": "v3"
+    }
+  ],
+  "deployed": true
+}

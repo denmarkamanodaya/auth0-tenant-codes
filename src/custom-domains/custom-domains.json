@@ -1,0 +1,18 @@
+[
+  {
+    "domain": "auth0.tst.myxplor.com",
+    "primary": true,
+    "status": "ready",
+    "type": "auth0_managed_certs",
+    "verification": {
+      "methods": [
+        {
+          "name": "CNAME",
+          "record": "dev-ainxkc0mnpi0u81a-cd-7ultqnndhafsnrdq.edge.tenants.us.auth0.com",
+          "domain": "auth0.tst.myxplor.com"
+        }
+      ]
+    },
+    "tls_policy": "recommended"
+  }
+]
