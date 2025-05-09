@@ -7,7 +7,7 @@ exports.onExecutePostLogin = async (event, api) => {
   console.log("MY EVENT CLIENT", event.client);
   console.log("MY EVENT CLIENT METADATA", event.client.metadata);
   console.log("MY EVENT CONNECTION", event.connection);
-  console.log("ADDED FROM AUTH0 CICD");
+  console.log("TEST FROM AUTH0 CICD");
 
   const management = new ManagementClient({
       domain: event.secrets.AUTH0_DOMAIN,
