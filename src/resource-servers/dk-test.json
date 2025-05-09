@@ -1,0 +1,40 @@
+{
+  "name": "dk-test",
+  "identifier": "dk-test",
+  "allow_offline_access": false,
+  "skip_consent_for_verifiable_first_party_clients": true,
+  "token_lifetime": 86400,
+  "token_lifetime_for_web": 7200,
+  "signing_alg": "RS256",
+  "scopes": [
+    {
+      "value": "read:organizations",
+      "description": "read:organizations"
+    },
+    {
+      "value": "*",
+      "description": "all"
+    },
+    {
+      "value": "create:users",
+      "description": "create:users"
+    },
+    {
+      "value": "read:users",
+      "description": "read:users"
+    },
+    {
+      "value": "read:connections",
+      "description": "read:connections"
+    },
+    {
+      "value": "create:passwords_checkin",
+      "description": "create:passwords_checkin"
+    },
+    {
+      "value": "create:organizations",
+      "description": "create:organizations"
+    }
+  ],
+  "token_dialect": "access_token"
+}

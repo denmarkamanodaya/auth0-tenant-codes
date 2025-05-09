@@ -1,0 +1,30 @@
+{
+  "name": "Federated Account Linking",
+  "code": "src/actions/Federated Account Linking/code.js",
+  "runtime": "node22",
+  "status": "built",
+  "dependencies": [
+    {
+      "name": "auth0",
+      "version": "4.18.0"
+    }
+  ],
+  "secrets": [
+    {
+      "name": "AUTH0_DOMAIN"
+    },
+    {
+      "name": "CLIENT_ID"
+    },
+    {
+      "name": "CLIENT_SECRET"
+    }
+  ],
+  "supported_triggers": [
+    {
+      "id": "post-login",
+      "version": "v3"
+    }
+  ],
+  "deployed": true
+}

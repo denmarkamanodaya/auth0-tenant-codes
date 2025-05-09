@@ -1,0 +1,24 @@
+{
+  "name": "corp1-syd-ho-c1",
+  "display_name": "Sydney Center One",
+  "branding": {
+    "colors": {
+      "page_background": "#FFC0CB",
+      "primary": "#ffffff"
+    }
+  },
+  "metadata": {
+    "BaseOrg": "Corp1",
+    "domainVerificationToken": "b3c17cda22449b754ce33a8aa92fa7a3c8eae2af610684b8aeda490a0d24fdba",
+    "ParentOrg": "SYDHO"
+  },
+  "connections": [
+    {
+      "name": "Username-Password-Authentication",
+      "assign_membership_on_login": false,
+      "is_signup_enabled": false,
+      "show_as_button": true
+    }
+  ],
+  "client_grants": []
+}

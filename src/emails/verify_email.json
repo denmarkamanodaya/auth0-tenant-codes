@@ -1,0 +1,10 @@
+{
+  "body": "./verify_email.html",
+  "from": "",
+  "resultUrl": "{{ application.callback_domain }}/onboarding/create",
+  "subject": "",
+  "syntax": "liquid",
+  "template": "verify_email",
+  "urlLifetimeInSeconds": 432000,
+  "enabled": true
+}

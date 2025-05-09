@@ -1,0 +1,68 @@
+{
+  "en": {
+    "login": {
+      "login": {
+        "description": "You are logging into a secure system. Please note your IP address and all activities are fully tracked.",
+        "pageTitle": "Discover | Login",
+        "title": "Welcome to Discover v1.25.5.0",
+        "buttonText": "Sign in"
+      }
+    },
+    "login-id": {
+      "login-id": {
+        "description": "You are logging into a secure system. Please note your IP address and all activities are fully tracked.",
+        "title": "Welcome to Discover v1.25.5.0",
+        "buttonText": "Sign in"
+      }
+    },
+    "login-password": {
+      "login-password": {
+        "description": "Enter your password to continue to ${clientName}"
+      }
+    },
+    "signup": {
+      "signup": {
+        "auth0-users-validation": "Something went wrong, please try again later",
+        "buttonText": "Continue",
+        "custom-script-error-code": "Something went wrong, please try again later.",
+        "description": "Sign Up to ${companyName} to continue to ${clientName}.",
+        "email-in-use": "The user already exists.",
+        "emailPlaceholder": "Email address",
+        "federatedConnectionButtonText": "Continue with ${connectionName}",
+        "hidePasswordText": "Hide password",
+        "invalid-connection": "Invalid connection",
+        "invalid-email-format": "Email is not valid.",
+        "invalid-username": "Username can only contain alphanumeric characters or: '${characters}'. Username should have between ${min} and ${max} characters.",
+        "invalid-username-email-not-allowed": "The username cannot be an email.",
+        "invalid-username-invalid-characters": "The username has invalid characters.",
+        "invalid-username-max-length": "The username must not be longer than ${max} characters.",
+        "invalid-username-min-length": "The username must have at least ${min} characters.",
+        "ip-blocked": "We have detected suspicious login behavior and further attempts will be blocked. Please contact the administrator.",
+        "ip-signup-blocked": "Too many signups from the same IP",
+        "loginActionLinkText": "Log in",
+        "loginActionText": "Already have an account?",
+        "logoAltText": "${companyName}",
+        "no-db-connection": "Invalid connection",
+        "no-email": "Please enter an email address",
+        "no-password": "Password is required",
+        "no-re-enter-password": "New password confirmation is missing",
+        "no-username": "Username is required",
+        "pageTitle": "Sign up | ${clientName}",
+        "password-breached": "This combination of credentials was detected in a public data breach on another website. Before your account is created, please use a different password to keep it secure.",
+        "password-contains-user-information": "Password contains user information",
+        "password-mismatch": "Passwords don't match",
+        "password-policy-not-conformant": "The password is too weak",
+        "password-previously-used": "Password has previously been used",
+        "password-too-common": "The password is too common",
+        "password-too-weak": "The password is too weak",
+        "passwordPlaceholder": "Password",
+        "passwordSecurityText": "Your password must contain:",
+        "separatorText": "Or",
+        "showPasswordText": "Show password",
+        "title": "Welcome",
+        "username-taken": "The username provided is in use already.",
+        "usernamePlaceholder": "Username"
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "login": [
+    {
+      "login": [
+        {
+          "name": "form-content-end",
+          "template": "partials/login/login/form-content-end.liquid"
+        }
+      ]
+    }
+  ],
+  "login-id": [
+    {
+      "login-id": [
+        {
+          "name": "form-content-end",
+          "template": "partials/login-id/login-id/form-content-end.liquid"
+        }
+      ]
+    }
+  ]
+}

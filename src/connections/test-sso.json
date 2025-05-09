@@ -1,0 +1,41 @@
+{
+  "options": {
+    "domain": "myxplorstaging.onmicrosoft.com",
+    "client_id": "9b15138d-10cb-4e3b-ba42-d768ec1c3338",
+    "use_wsfed": false,
+    "app_domain": "dev-ainxkc0mnpi0u81a.us.auth0.com",
+    "ext_groups": true,
+    "ext_profile": true,
+    "thumbprints": [
+      "2588523AC1E10D9ADCE647EA420F2E8E41CC4CD6",
+      "08DBF4388DD1C2A9471445676A8300B21087D971",
+      "3E854A7A2AC83AF993C8B43D1BD05E9C1C28B3B9",
+      "FE33708DE4A7BD34CAF1711DAF94143E40512CBA",
+      "F9C800BE39A6436E0AB36D332290C1E125BCF78C",
+      "2A6F2868351B6FFA55506B13DFC7875FCEEFD3BF"
+    ],
+    "identity_api": "microsoft-identity-platform-v2.0",
+    "basic_profile": false,
+    "tenant_domain": "myxplorstaging.onmicrosoft.com",
+    "waad_protocol": "openid-connect",
+    "domain_aliases": [
+      "myxplorstaging.onmicrosoft.com"
+    ],
+    "api_enable_users": false,
+    "userid_attribute": "oid",
+    "ext_nested_groups": true,
+    "useCommonEndpoint": false,
+    "waad_common_endpoint": false,
+    "set_user_root_attributes": "on_first_login",
+    "should_trust_email_verified_connection": "never_set_emails_as_verified"
+  },
+  "strategy": "waad",
+  "name": "test-sso",
+  "is_domain_connection": false,
+  "show_as_button": false,
+  "display_name": "MyXplorStaging",
+  "enabled_clients": [
+    "dk-test-migration",
+    "Xplor Office"
+  ]
+}

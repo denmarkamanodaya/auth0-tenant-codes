@@ -1,0 +1,18 @@
+{
+  "client_id": "auth0-delegated-admin",
+  "audience": "https://dev-ainxkc0mnpi0u81a.us.auth0.com/api/v2/",
+  "scope": [
+    "read:clients",
+    "delete:clients",
+    "read:connections",
+    "read:users",
+    "update:users",
+    "delete:users",
+    "create:users",
+    "read:logs",
+    "read:device_credentials",
+    "update:device_credentials",
+    "delete:device_credentials",
+    "delete:guardian_enrollments"
+  ]
+}

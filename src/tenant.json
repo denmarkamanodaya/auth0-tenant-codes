@@ -1,0 +1,27 @@
+{
+  "default_audience": "",
+  "default_directory": "Username-Password-Authentication",
+  "enabled_locales": [
+    "en"
+  ],
+  "flags": {
+    "enable_client_connections": false,
+    "revoke_refresh_token_grant": false,
+    "disable_clickjack_protection_headers": false
+  },
+  "friendly_name": "SaaStart",
+  "idle_session_lifetime": 72,
+  "picture_url": "https://cdn.auth0.com/blog/auth0_by_okta_logo_black.png",
+  "sandbox_version": "18",
+  "session_lifetime": 168,
+  "oidc_logout": {
+    "rp_logout_end_session_endpoint_discovery": true
+  },
+  "customize_mfa_in_postlogin_action": true,
+  "universal_login": {
+    "colors": {
+      "page_background": "#000000",
+      "primary": "#635dff"
+    }
+  }
+}

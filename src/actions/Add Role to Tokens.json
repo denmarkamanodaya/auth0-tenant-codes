@@ -1,0 +1,19 @@
+{
+  "name": "Add Role to Tokens",
+  "code": "src/actions/Add Role to Tokens/code.js",
+  "runtime": "node18-actions",
+  "status": "built",
+  "dependencies": [],
+  "secrets": [
+    {
+      "name": "CUSTOM_CLAIMS_NAMESPACE"
+    }
+  ],
+  "supported_triggers": [
+    {
+      "id": "post-login",
+      "version": "v3"
+    }
+  ],
+  "deployed": true
+}
